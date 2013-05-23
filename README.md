@@ -1,6 +1,6 @@
 # TDD-style assertions for Chai.js plugins
 
-Collection of signature **proposals** for TDD-style assertions for the listed chai plugins. Goal is to have the basic assertions of all plugins accessible in TDD without method-name collisions.
+> Collection of signature **proposals** for TDD-style assertions for the listed chai plugins. Goal is to have the basic assertions of all plugins accessible in TDD without method-name collisions.
 
 ### Notes
 
@@ -15,10 +15,11 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 
 ### Version
 
-2013-05~23 -- Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
+* 2013-05~23 -- Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
 
-## Tool
-* There's a crude `collide.js` script to de-dupe statements in this document, run it with node.js from your console like `$ node collide`. It will save its console output similar to [collide.log](https://github.com/Bartvds/chai-tdd-plugins/blob/master/collide.log)
+### Tool
+
+There's a crude `collide.js` script to de-dupe statements in this document, run it with node.js from your console like `$ node collide`. It will save its console output similar to [collide.log](https://github.com/Bartvds/chai-tdd-plugins/blob/master/collide.log)
 
 ## Overview
 
@@ -48,7 +49,7 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 
 [chaijs.com/plugins/chai-fuzzy](http://chaijs.com/plugins/chai-fuzzy)
 
-Seems to map nicely
+Fuzzy like I like it.
 
 ````js
 assert.like(subject, value)
@@ -57,6 +58,8 @@ assert.containOneLike(subject, value)
 	expect(subject).to.be.containOneLike('cow patties')
 assert.jsonOf(subject, value)
 	expect(subject).to.be.jsonOf(apple)
+//maybe likeJson to keep it grouped?
+assert.likeJson(subject, value)
 ````
 
 ### chai-stats
@@ -95,7 +98,7 @@ assert.deviationAlmost(values, deviation, compare)
 
 [chaijs.com/plugins/chai-http](http://chaijs.com/plugins/chai-http)
 
-Maybe a http-prefix?
+Maybe a http-prefix for status and content type? Rest seems OK.
 
 ````js
 //add prefix?
@@ -125,7 +128,7 @@ assert.contentTypeHtml(req)
 assert.contentTypeText(req)
 	expect(req).to.be.text;
 assert.contentType(req, contentType)
-	//why not this also?
+	//this should exist as well
 ````
 
 ### chai-jquery
@@ -273,7 +276,9 @@ assert.doesNotBecome(promise, "foo", "optional message")
 
 [chaijs.com/plugins/chai-spies](http://chaijs.com/plugins/chai-spies)
 
-Conflicts with chai-sinon, considering a prefix
+Conflicts with chai-sinon, considering a prefix.
+
+The names are very generic, extra reason to prefix (min.max etc belong to a number type of is min/max).
 
 ````js
 assert.spy(spy)
@@ -361,6 +366,8 @@ assert.alwaysThrew(spy, errorObjOrErrorTypeStringOrNothing)
 
 > Would be more attractive to use if the JavaScript API was easier to understand and docs would not require CoffeeScript knowledge to decode.
 
+Should have the change prefix I guess.
+
 ````coffee
 assert.change(result, when)
 	expect(-> result).to.change.when -> result -= 1
@@ -395,6 +402,7 @@ assert.changeAtMost(result, amount, when)
 
 > Would be more attractive to use if the JavaScript API was easier to understand and docs would not require CoffeeScript knowledge to decode.
 
+I need to pick up my coffee skills to make sense of this.
 
 ````coffee
 assert.trigger(model, trigger, models, when)
@@ -406,7 +414,7 @@ assert.trigger(model, trigger, models, when)
 	model.should.trigger("change").and.trigger("change:attribute").when -### model.set attribute: "value"
 	model.should.trigger("change").and.not.trigger("reset").when -### model.set attribute: "value"
 
-//is this using named arguments?
+//is this using named arguments or what?
 assert.routeTo(path, router, trigger, args, when)
 	"page/3".should.route.to myRouter, "openPage", arguments: ["3"]
 	"pages/3".should.not.route.to myRouter, "openPage"
@@ -421,7 +429,7 @@ assert.callsView(view, path, when)
 
 [chaijs.com/api/assert](http://chaijs.com/api/assert)
 
-Including negations, extracted from `assert.d.ts` which was extracted from from chai.js v1.6.0
+Including negations and signature aliases, as extracted from `assert.d.ts` which was extracted from from chai.js v1.6.0
 
 ````js
 assert.fail(actual, expected, operator?)
