@@ -419,7 +419,7 @@ assert.callsView(view, path, when)
 
 ## standard assertions
 
-[http://chaijs.com/api/assert](http://chaijs.com/api/assert)
+[chaijs.com/api/assert](http://chaijs.com/api/assert)
 
 Including negations, extracted from `assert.d.ts` which was extracted from from chai.js v1.6.0
 
