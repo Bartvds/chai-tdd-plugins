@@ -4,11 +4,10 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 
 ### Notes
 
-* In implementation all assertions would have the optional message parameter (a big part of what makes Chai the best (imho)), but I left it out for review clarity.
+* In implementation all assertions would have the optional message parameter, but I left it out for review clarity.
 * Ideally the TDD asserts would later merge into their respective plugin modules for easy install.
 * I added the standard assertions on bottom of document for easy review
-* Besides exposing the plugins as sweet sugared TDD there is an additional goal to export these to TypeScript type definitions. Using type info in BDD dot nation is hard to declare and ~~annoying~~ less useful in IDE's with auto-suggest. Compare [this](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai.d.ts) to [these](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai-assert.d.ts).
-* There's a crude `collide.js` script to de-dupe codestatements in this document, run it in node.js.
+* Besides exposing the plugins as sweet sugared TDD there is an additional goal to export these to TypeScript type definitions. Using type info in BDD dot nation is hard to declare and ~~annoying~~ less useful in IDE's with auto-suggest. Compare navigating [this](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai.d.ts) to [these](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai-assert.d.ts).
 
 ### Todo
 
@@ -17,6 +16,9 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 ### Version
 
 2013-05~23 -- Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
+
+## Tool
+* There's a crude `collide.js` script to de-dupe statements in this document, run it with node.js from your console like `$ node collide`. It will save its console output similar to [collide.log](https://github.com/Bartvds/chai-tdd-plugins/blob/master/collide.js)
 
 ## Overview
 
