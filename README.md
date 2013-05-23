@@ -293,8 +293,15 @@ assert.min(spy, n)
 	expect(spy).to.have.been.called.min(3)
 assert.max(spy, n)
 	expect(spy).to.have.been.called.max(3)
+````
 
-// chai-sinon (conflicts with chai-spies)
+### chai-sinon
+
+[chaijs.com/plugins/chai-sinon](http://chaijs.com/plugins/chai-sinon)
+
+Conflicts with chai-spies, considering a prefix
+
+````js
 assert.called(spy)
 	expect(spy).to.have.been.called
 
