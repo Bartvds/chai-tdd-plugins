@@ -1,6 +1,5 @@
 //crude script to extract ^assert. statements from code blocks and check collisions
 
-
 var asserts = [];
 var index = [];
 var names = [];
@@ -18,15 +17,8 @@ var padLeft = function(str, len, char){
 	}
 	return str;
 };
-var padRight = function(str, len, char){
-	str = '' + str;
-	while(str.length < len){
-		str = str + char;
-	}
-	return str;
-};
 
-//parse markdown
+//parse lines, look for codee blocks, collect lines starting with ^assert.
 (function () {
 	var fs = require('fs');
 	var doc = fs.readFileSync('README.md', 'utf8');
@@ -108,6 +100,7 @@ var padRight = function(str, len, char){
 	console.log('unique: ' + unique);
 	console.log('collide: ' + collide)
 	console.log('dupes: ' + dupes);
+
 	dupeNames = dupeNames.sort();
 	dupeNames.forEach(function (name) {
 		if (index.hasOwnProperty(name)) {
