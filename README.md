@@ -96,6 +96,8 @@ Maybe a http-prefix?
 
 ````js
 //add prefix?
+assert.httpStatus(req, code)
+//or plain?
 assert.status(req, code)
 	expect(res).to.have.status(200)
 
@@ -112,6 +114,7 @@ assert.ip(value)
 	expect('127.0.0.1').to.be.an.ip;
 	expect('2001:0db8:85a3:0000:0000:8a2e:0370:7334').to.be.an.ip;
 
+//prefix as these are common names
 assert.contentTypeJson(req)
 	expect(req).to.be.json;
 assert.contentTypeHtml(req)
@@ -126,7 +129,9 @@ assert.contentType(req, contentType)
 
 [chaijs.com/plugins/chai-jquery](http://chaijs.com/plugins/chai-jquery)
 
-I think these need some prefixing as these names are very common, but which one? jQuery? dom? html? elem?
+I think these need some prefixing as these names are very common, but which one? 
+
+	jQuery? dom? html? elem? selection?
 
 ````js
 assert.attr(query, name[, value])
@@ -456,9 +461,6 @@ assert.instanceOf(val, type)
 assert.notInstanceOf(val, type)
 
 assert.include(exp, inc)
-assert.include(exp, inc)
-
-assert.notInclude(exp, inc)
 assert.notInclude(exp, inc)
 
 assert.match(exp, re)
@@ -509,4 +511,4 @@ assert.ifError(val)
 
 ## License
 
-Chai.js is MIT License, and so is this data.
+Chai.js is MIT License, and so is this repos.
