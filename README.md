@@ -18,7 +18,7 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 2013-05~23 -- Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
 
 ## Tool
-* There's a crude `collide.js` script to de-dupe statements in this document, run it with node.js from your console like `$ node collide`. It will save its console output similar to [collide.log](https://github.com/Bartvds/chai-tdd-plugins/blob/master/collide.js)
+* There's a crude `collide.js` script to de-dupe statements in this document, run it with node.js from your console like `$ node collide`. It will save its console output similar to [collide.log](https://github.com/Bartvds/chai-tdd-plugins/blob/master/collide.log)
 
 ## Overview
 
