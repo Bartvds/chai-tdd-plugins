@@ -8,6 +8,7 @@ Collection of signature **proposals** for TDD-style assertions for the listed ch
 * Ideally the TDD asserts would later merge into their respective plugin modules for easy install.
 * I added the standard assertions on bottom of document for easy review
 * Besides exposing the plugins as sweet sugared TDD there is an additional goal to export these to TypeScript type definitions. Using type info in BDD dot nation is hard to declare and ~~annoying~~ less useful in IDE's with auto-suggest. Compare [this](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai.d.ts) to [these](https://github.com/borisyankov/DefinitelyTyped/blob/master/chai/chai-assert.d.ts).
+* There's a crude `collide.js` script to de-dupe codestatements in this document, run it in node.js.
 
 ### Todo
 
@@ -304,7 +305,7 @@ assert.calledThrice(spy)
 
 assert.calledBefore(spy, spy2)
 	expect(spy1).to.have.been.calledBefore(spy2)
-assert.calledAfter((spy, spy2)
+assert.calledAfter(spy, spy2)
 	expect(spy1).to.have.been.calledAfter(spy2)
 
 assert.calledWithNew(spy)
@@ -407,7 +408,7 @@ assert.callsView(view, path, when)
 		view.$('a.login').trigger 'click'
 ````
 
-## Standard assertions
+## standard assertions
 
 [http://chaijs.com/api/assert](http://chaijs.com/api/assert)
 
