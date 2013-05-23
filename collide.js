@@ -17,11 +17,17 @@ var padLeft = function (str, len, char) {
 	}
 	return str;
 };
+var logs = [];
+var log = function(line) {
+	console.log(line);
+	logs.push(line);
+};
+
+var fs = require('fs');
+var doc = fs.readFileSync('README.md', 'utf8');
 
 //parse lines, look for code blocks, collect lines starting with 'assert.'
 (function () {
-	var fs = require('fs');
-	var doc = fs.readFileSync('README.md', 'utf8');
 
 	var lineExp = /[\r\n]+/g;
 	var blockExp = /^[ \t]*```+/;
@@ -34,9 +40,9 @@ var padLeft = function (str, len, char) {
 	var lines = doc.split(lineExp);
 	var lastHead;
 
-	console.log(' ');
-	console.log('parsing ' + lines.length + ' lines');
-	console.log(' ');
+	log(' ');
+	log('parsing ' + lines.length + ' lines');
+	log(' ');
 
 	lines.forEach(function (line, num, lines) {
 		if (!inBlock) {
@@ -91,13 +97,13 @@ var padLeft = function (str, len, char) {
 			var arr = index[name];
 			data = arr[0];
 			if (arr.length == 1) {
-				console.log('   ' + data.full);
+				log('   ' + data.full);
 				uniques++;
 			}
 			else if (arr.length > 1) {
 				dupes++;
 				dupeNames.push(data.name);
-				console.log('!  assert.' + data.name);
+				log('!  assert.' + data.name);
 				var obj = {};
 				var parts = [];
 				var headers = [];
@@ -116,26 +122,33 @@ var padLeft = function (str, len, char) {
 				headers = headers.sort();
 				headers.forEach(function (head) {
 					var tmp = obj[head]
-					console.log('     ' + head);
+					log('     ' + head);
 					tmp.forEach(function (data) {
-						console.log('        ' + padLeft(data.line, 4, ' ') + '  ' + data.full);
+						log('        ' + padLeft(data.line, 4, ' ') + '  ' + data.full);
 					});
 				});
 
-				console.log('');
+				log('');
 			}
 		}
 	});
-	console.log('');
-	console.log('asserts: ' + count);
-	console.log('uniques: ' + uniques);
-	console.log('collide: ' + collide)
-	console.log('dupes: ' + dupes);
+	log('');
+	log('asserts: ' + count);
+	log('uniques: ' + uniques);
+	log('collide: ' + collide)
+	log('dupes: ' + dupes);
 
 	dupeNames = dupeNames.sort();
 	dupeNames.forEach(function (name) {
 		if (index.hasOwnProperty(name)) {
-			console.log('   -> assert.' + name + ' x ' + index[name].length);
+			log('   -> assert.' + name + ' x ' + index[name].length);
 		}
 	});
+
 })();
+
+var file = 'collide.log'
+fs.writeFileSync(file, logs.join('\n'), 'utf8');
+
+console.log('');
+console.log('saved log as ' + file);

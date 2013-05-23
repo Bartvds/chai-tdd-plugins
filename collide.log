@@ -1,0 +1,191 @@
+ 
+parsing 377 lines
+ 
+!  assert.Throw
+     standard assertions
+         274  assert.Throw (fn)
+         275  assert.Throw (fn, regExp)
+         276  assert.Throw (fn, errType)
+         277  assert.Throw (fn, errType, regExp)
+
+   assert.allIn. <any assertion>
+   assert.almostEqual (3.1416, 3.14159, 3, 'these numbers are almost equal')
+   assert.alwaysCalledOn (spy, context)
+   assert.alwaysCalledWith (spy, args)
+   assert.alwaysCalledWithExactly (spy, args)
+   assert.alwaysCalledWithMatch (spy, args)
+   assert.alwaysCalledWithNew (spy)
+   assert.alwaysReturned (spy, returnVal)
+   assert.alwaysThrew (spy, errorObjOrErrorTypeStringOrNothing)
+   assert.attr (query, name[, value])
+   assert.becomes (promise, "foo", "optional message")
+!  assert.called
+     chai-spies
+         129  assert.called (spy)
+         144  assert.called (spy)
+
+   assert.calledAfter (spy, spy2)
+   assert.calledBefore (spy, spy2)
+   assert.calledOn (spy, context)
+   assert.calledOnce (spy)
+   assert.calledThrice (spy)
+   assert.calledTwice (spy)
+   assert.calledWith (spy, args)
+   assert.calledWithExactly (spy, args)
+   assert.calledWithMatch (spy, args)
+   assert.calledWithNew (spy)
+   assert.callsView (view, path, when)
+   assert.change (result, when)
+   assert.changeAtLeast (result, amount, when)
+   assert.changeAtMost (result, amount, when)
+   assert.changeBy (result, delta, when)
+   assert.changeFrom (result, startValue, when)
+   assert.changeFromTo (result, startValue, endValue, when)
+   assert.changeTo (result, endValue, when)
+   assert.checked (query)
+   assert.class (query, className)
+   assert.closeTo (act, exp, delta)
+   assert.contain (query, text)
+   assert.containOneLike (subject, value)
+   assert.contentType (req, contentType)
+   assert.contentTypeHtml (req)
+   assert.contentTypeJson (req)
+   assert.contentTypeText (req)
+   assert.css (query, name[, value])
+   assert.data (query, name[, value])
+   assert.decrease (result, amount, when)
+   assert.deepAlmostEqual ({ pi: 3.1416 }, { pi: 3.14159 }, 3)
+   assert.deepEqual (act, exp)
+   assert.deepProperty (obj, prop)
+   assert.deepPropertyNotVal (obj, prop, val)
+   assert.deepPropertyVal (obj, prop, val)
+   assert.deviationAlmost (values, deviation, compare)
+   assert.disabled (query)
+   assert.doesNotBecome (promise, "foo", "optional message")
+!  assert.doesNotThrow
+     standard assertions
+         278  assert.doesNotThrow (fn)
+         279  assert.doesNotThrow (fn, regExp)
+         280  assert.doesNotThrow (fn, errType)
+         281  assert.doesNotThrow (fn, errType, regExp)
+
+   assert.empty (query)
+   assert.equal (act, exp)
+   assert.eventually.  <all asserts>
+   assert.exactly (spy, n)
+   assert.exist (query)
+   assert.fail (actual, expected, operator?)
+   assert.have (query, selector)
+   assert.header (req, name)
+   assert.headerValue (req, name, value)
+   assert.headers (req)
+   assert.hidden (query)
+   assert.html (query, html)
+   assert.httpStatus (req, code)
+   assert.id (query, id)
+   assert.ifError (val)
+   assert.include (exp, inc)
+   assert.includeMembers (set1, set2)
+   assert.increase (result, amount, when)
+   assert.instanceOf (val, type)
+   assert.interface (object, struct)
+   assert.ip (value)
+   assert.isArray (val)
+   assert.isBoolean (val)
+   assert.isDefined (val)
+   assert.isFalse (val)
+   assert.isFulfilled (promise, "optional message")
+   assert.isFunction (val)
+   assert.isNotArray (val)
+   assert.isNotBoolean (val)
+   assert.isNotFunction (val)
+   assert.isNotNull (val)
+   assert.isNotNumber (val)
+   assert.isNotObject (val)
+   assert.isNotString (val)
+   assert.isNull (val)
+   assert.isNumber (val)
+   assert.isObject (val)
+!  assert.isRejected
+     chai-as-promised
+         122  assert.isRejected (promise, "optional message")
+         123  assert.isRejected (promise, Error, "optional message")
+         124  assert.isRejected (promise, /error message matcher/, "optional message")
+
+   assert.isString (val)
+   assert.isTrue (val)
+   assert.isUndefined (val)
+   assert.jsonOf (subject, value)
+   assert.lengthOf (exp, len)
+   assert.like (subject, value)
+!  assert.match
+     chai-jquery
+          84  assert.match (query, selector)
+     standard assertions
+         254  assert.match (exp, re)
+
+   assert.max (spy, n)
+   assert.meanAbove (values, compare)
+   assert.meanBelow (values, compare)
+   assert.meanEqual (values, compare)
+   assert.min (spy, n)
+   assert.notDeepEqual (act, exp)
+   assert.notDeepProperty (obj, prop)
+   assert.notEqual (act, exp)
+   assert.notInclude (exp, inc)
+   assert.notInstanceOf (val, type)
+   assert.notMatch (exp, re)
+   assert.notProperty (obj, prop)
+   assert.notStrictEqual (act, exp)
+   assert.notTypeOf (val, type)
+   assert.not_called (spy)
+   assert.ok (val)
+   assert.once (spy)
+   assert.operator (val, operator, val2)
+   assert.property (obj, prop)
+   assert.propertyNotVal (obj, prop, val)
+   assert.propertyVal (obj, prop, val)
+   assert.returned (spy, returnVal)
+   assert.routeTo (path, router, trigger, args, when)
+   assert.sameMembers (set1, set2)
+   assert.selected (query)
+   assert.someIn. <any assertion>
+   assert.spy (spy)
+   assert.status (req, code)
+   assert.strictEqual (act, exp)
+   assert.sumAbove (values, compare)
+   assert.sumBelow (values, compare)
+   assert.sumEqual (values, compare)
+   assert.text (query, text)
+   assert.threw (spy, errorObjOrErrorTypeStringOrNothing)
+!  assert.throw
+     standard assertions
+         266  assert.throw (fn)
+         267  assert.throw (fn, regExp)
+         268  assert.throw (fn, errType)
+         269  assert.throw (fn, errType, regExp)
+
+!  assert.throws
+     standard assertions
+         270  assert.throws (fn)
+         271  assert.throws (fn, regExp)
+         272  assert.throws (fn, errType)
+         273  assert.throws (fn, errType, regExp)
+
+   assert.trigger (model, trigger, models, when)
+   assert.twice (spy)
+   assert.typeOf (val, type)
+   assert.value (query, value)
+   assert.visible (query)
+
+asserts: 154
+uniques: 131
+collide: 23
+dupes: 7
+   -> assert.Throw x 4
+   -> assert.called x 2
+   -> assert.doesNotThrow x 4
+   -> assert.isRejected x 3
+   -> assert.match x 2
+   -> assert.throw x 4
+   -> assert.throws x 4
