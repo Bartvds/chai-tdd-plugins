@@ -33,7 +33,6 @@ var doc = fs.readFileSync('README.md', 'utf8');
 	var blockExp = /^[ \t]*```+/;
 	var assertExp = /^[ \t]*assert\.([\w\._]+)(.*)/;
 	var header = /^[ \t]*#+[ \t]*([\w_ -]+[\w])/;
-	var i = 0;
 	var tmp;
 	var inBlock = false
 	//brutal split  ftw
@@ -66,9 +65,8 @@ var doc = fs.readFileSync('README.md', 'utf8');
 		assertExp.lastIndex = 0;
 		tmp = assertExp.exec(line);
 		if (tmp && tmp.length > 1) {
-			asserts.push({name: tmp[1], head:lastHead, arg: tmp[2], line: i, full: 'assert.' + tmp[1] + ' ' + tmp[2]});
+			asserts.push({name: tmp[1], head:lastHead, arg: tmp[2], full: 'assert.' + tmp[1] + ' ' + tmp[2]});
 		}
-		i++;
 	});
 
 })();
@@ -124,7 +122,7 @@ var doc = fs.readFileSync('README.md', 'utf8');
 					var tmp = obj[head]
 					log('     ' + head);
 					tmp.forEach(function (data) {
-						log('        ' + padLeft(data.line, 4, ' ') + '  ' + data.full);
+						log('        ' + data.full);
 					});
 				});
 

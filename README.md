@@ -13,9 +13,10 @@
 
 * If the signatures seem sensible the lists needs a sweep for suitable negation candidates, but again I left them out for clarity.
 
-### Version
+### History
 
-* 2013-05~23 -- Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
+* `2013-06-06` - Implemented and pushed `chai-fuzzy` 
+* `2013-05~23` - Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
 
 ### Tool
 
@@ -49,7 +50,7 @@ There's a crude `collide.js` script to de-dupe statements in this document, run 
 
 [chaijs.com/plugins/chai-fuzzy](http://chaijs.com/plugins/chai-fuzzy)
 
-Fuzzy like I like it.
+* 2012-06-06 - implemented in plugin, pull-request  
 
 ````js
 assert.like(subject, value)
@@ -58,15 +59,13 @@ assert.containOneLike(subject, value)
 	expect(subject).to.be.containOneLike('cow patties')
 assert.jsonOf(subject, value)
 	expect(subject).to.be.jsonOf(apple)
-//maybe likeJson to keep it grouped?
-assert.likeJson(subject, value)
 ````
 
 ### chai-stats
 
 [chaijs.com/plugins/chai-stats](http://chaijs.com/plugins/chai-stats)
 
-Added a prefix for sum/mean
+* Adding a prefix for sum/mean
 
 ````js
 //2 existing
@@ -98,14 +97,14 @@ assert.deviationAlmost(values, deviation, compare)
 
 [chaijs.com/plugins/chai-http](http://chaijs.com/plugins/chai-http)
 
-Maybe a http-prefix for status and content type? Rest seems OK.
+* Maybe a http-prefix for status and content type? Rest seems OK.
 
 ````js
-//add prefix?
-assert.httpStatus(req, code)
 //or plain?
 assert.status(req, code)
 	expect(res).to.have.status(200)
+//add prefix?
+assert.httpStatus(req, code)
 
 assert.header(req, name)
 	expect(req).to.have.header('x-api-key')
@@ -135,7 +134,7 @@ assert.contentType(req, contentType)
 
 [chaijs.com/plugins/chai-jquery](http://chaijs.com/plugins/chai-jquery)
 
-I think these need some prefixing as these names are very common, but which one? 
+* I think these need some prefixing as these names are very common, but which one? 
 
 	jQuery? dom? html? elem? selection?
 
@@ -206,7 +205,7 @@ assert.have(query, selector)
 
 [chaijs.com/plugins/chai-interface](http://chaijs.com/plugins/chai-interface)
 
-Isn't interface is reserved word? Does it matter?
+* Isn't interface is reserved word? Does it matter?
 
 ````js
 assert.interface(object, struct)
@@ -217,7 +216,7 @@ assert.interface(object, struct)
 
 [chaijs.com/plugins/chai-things](http://chaijs.com/plugins/chai-things)
 
-This one is tricky because it applies existing assertions over the array elements. Needs some thought on how to do this properly.
+* This one is tricky because it applies existing assertions over the array elements. Needs some thought on how to do this properly.
 
 ````js
 assert.someIn.<any assertion>
@@ -260,7 +259,7 @@ assert.allIn.<any assertion>
 
 [chaijs.com/plugins/chai-as-promised](http://chaijs.com/plugins/chai-as-promised)
 
-These exists already! Need to verify completeness with author
+* These exists already! Need to verify completeness with author
 
 ````js
 assert.eventually. <all asserts>
@@ -276,9 +275,8 @@ assert.doesNotBecome(promise, "foo", "optional message")
 
 [chaijs.com/plugins/chai-spies](http://chaijs.com/plugins/chai-spies)
 
-Conflicts with chai-sinon, considering a prefix.
-
-The names are very generic, extra reason to prefix (min.max etc belong to a number type of is min/max).
+* Conflicts with chai-sinon, considering a prefix.
+* The names are very generic, extra reason to prefix (min.max etc belong to a number type of is min/max).
 
 ````js
 assert.spy(spy)
@@ -304,7 +302,8 @@ assert.max(spy, n)
 
 [chaijs.com/plugins/chai-sinon](http://chaijs.com/plugins/chai-sinon)
 
-Conflicts with chai-spies, considering a prefix
+* Conflicts with chai-spies
+* Considering a prefix
 
 ````js
 assert.called(spy)
@@ -366,7 +365,7 @@ assert.alwaysThrew(spy, errorObjOrErrorTypeStringOrNothing)
 
 > Would be more attractive to use if the JavaScript API was easier to understand and docs would not require CoffeeScript knowledge to decode.
 
-Should have the change prefix I guess.
+* Should have the change prefix I guess.
 
 ````coffee
 assert.change(result, when)
@@ -402,7 +401,7 @@ assert.changeAtMost(result, amount, when)
 
 > Would be more attractive to use if the JavaScript API was easier to understand and docs would not require CoffeeScript knowledge to decode.
 
-I need to pick up my coffee skills to make sense of this.
+* I need to pick up my coffee skills to make sense of this.
 
 ````coffee
 assert.trigger(model, trigger, models, when)
@@ -429,7 +428,7 @@ assert.callsView(view, path, when)
 
 [chaijs.com/api/assert](http://chaijs.com/api/assert)
 
-Including negations and signature aliases, as extracted from `assert.d.ts` which was extracted from from chai.js v1.6.0
+* Including negations and signature aliases, as extracted from `assert.d.ts` which was extracted from from chai.js v1.6.0
 
 ````js
 assert.fail(actual, expected, operator?)

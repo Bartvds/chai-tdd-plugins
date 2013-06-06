@@ -3,10 +3,10 @@ parsing 388 lines
  
 !  assert.Throw
      standard assertions
-         275  assert.Throw (fn)
-         276  assert.Throw (fn, regExp)
-         277  assert.Throw (fn, errType)
-         278  assert.Throw (fn, errType, regExp)
+        assert.Throw (fn)
+        assert.Throw (fn, regExp)
+        assert.Throw (fn, errType)
+        assert.Throw (fn, errType, regExp)
 
    assert.allIn. <any assertion>
    assert.almostEqual (3.1416, 3.14159, 3, 'these numbers are almost equal')
@@ -21,9 +21,9 @@ parsing 388 lines
    assert.becomes (promise, "foo", "optional message")
 !  assert.called
      chai-sinon
-         145  assert.called (spy)
+        assert.called (spy)
      chai-spies
-         131  assert.called (spy)
+        assert.called (spy)
 
    assert.calledAfter (spy, spy2)
    assert.calledBefore (spy, spy2)
@@ -65,10 +65,10 @@ parsing 388 lines
    assert.doesNotBecome (promise, "foo", "optional message")
 !  assert.doesNotThrow
      standard assertions
-         279  assert.doesNotThrow (fn)
-         280  assert.doesNotThrow (fn, regExp)
-         281  assert.doesNotThrow (fn, errType)
-         282  assert.doesNotThrow (fn, errType, regExp)
+        assert.doesNotThrow (fn)
+        assert.doesNotThrow (fn, regExp)
+        assert.doesNotThrow (fn, errType)
+        assert.doesNotThrow (fn, errType, regExp)
 
    assert.empty (query)
    assert.equal (act, exp)
@@ -109,9 +109,9 @@ parsing 388 lines
    assert.isObject (val)
 !  assert.isRejected
      chai-as-promised
-         124  assert.isRejected (promise, "optional message")
-         125  assert.isRejected (promise, Error, "optional message")
-         126  assert.isRejected (promise, /error message matcher/, "optional message")
+        assert.isRejected (promise, "optional message")
+        assert.isRejected (promise, Error, "optional message")
+        assert.isRejected (promise, /error message matcher/, "optional message")
 
    assert.isString (val)
    assert.isTrue (val)
@@ -122,9 +122,9 @@ parsing 388 lines
    assert.likeJson (subject, value)
 !  assert.match
      chai-jquery
-          86  assert.match (query, selector)
+        assert.match (query, selector)
      standard assertions
-         255  assert.match (exp, re)
+        assert.match (exp, re)
 
    assert.max (spy, n)
    assert.meanAbove (values, compare)
@@ -162,17 +162,17 @@ parsing 388 lines
    assert.threw (spy, errorObjOrErrorTypeStringOrNothing)
 !  assert.throw
      standard assertions
-         267  assert.throw (fn)
-         268  assert.throw (fn, regExp)
-         269  assert.throw (fn, errType)
-         270  assert.throw (fn, errType, regExp)
+        assert.throw (fn)
+        assert.throw (fn, regExp)
+        assert.throw (fn, errType)
+        assert.throw (fn, errType, regExp)
 
 !  assert.throws
      standard assertions
-         271  assert.throws (fn)
-         272  assert.throws (fn, regExp)
-         273  assert.throws (fn, errType)
-         274  assert.throws (fn, errType, regExp)
+        assert.throws (fn)
+        assert.throws (fn, regExp)
+        assert.throws (fn, errType)
+        assert.throws (fn, errType, regExp)
 
    assert.trigger (model, trigger, models, when)
    assert.twice (spy)
