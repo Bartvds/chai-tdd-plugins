@@ -11,11 +11,11 @@
 
 ### Todo
 
-* If the signatures seem sensible the lists needs a sweep for suitable negation candidates, but again I left them out for clarity.
+* If the signatures seem sensible the lists needs a sweep for suitable negation candidates, as I left them out for clarity.
 
 ### History
 
-* `2013-06-06` - Implemented and pushed `chai-fuzzy` 
+* `2013-06-06` - Implemented `chai-fuzzy` 
 * `2013-05~23` - Initial collection of the plugins, their assertions and ***possible*** signatures. This version still has errors, assumptions, complications and some collisions. Mainly `chai-sinon` and `chai-spy`. Also `chai-things` looks *interesting* to wrap.
 
 ### Tool
@@ -50,7 +50,7 @@ There's a crude `collide.js` script to de-dupe statements in this document, run 
 
 [chaijs.com/plugins/chai-fuzzy](http://chaijs.com/plugins/chai-fuzzy)
 
-* 2012-06-06 - implemented in plugin, pull-request  
+* 2012-06-06 - implemented in plugin, send pull-request from [fork](https://github.com/Bartvds/chai-fuzzy)
 
 ````js
 assert.like(subject, value)
